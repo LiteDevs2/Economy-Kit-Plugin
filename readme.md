@@ -4,9 +4,6 @@ A simple economy framework for Godot 4.7
 
 💰 Currencies · 🛒 Shops · 📜 Transactions · 💾 Local Saving
 
-""Godot" (https://img.shields.io/badge/Godot-4.7-478CBF?logo=godot-engine&logoColor=white)" (https://godotengine.org/)
-""License" (https://img.shields.io/badge/License-Free%20Use-green)" (LICENSE.md)
-
 </div>---
 
 ✨ Features
