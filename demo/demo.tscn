@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bvye0l18ytgwp"]
+
+[ext_resource type="Script" uid="uid://cj7nsemc442h3" path="res://addons/economykit/demo/demo.gd" id="1"]
+
+[node name="Demo" type="Control" unique_id=930619919]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=2146886249]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBox" unique_id=1245225490]
+layout_mode = 2
+text = "EconomyKit Demo"
+horizontal_alignment = 1
+
+[node name="CoinsLabel" type="Label" parent="VBox" unique_id=1776675881]
+layout_mode = 2
+text = "Coins: 0"
+horizontal_alignment = 1
+
+[node name="GemsLabel" type="Label" parent="VBox" unique_id=1507912998]
+layout_mode = 2
+text = "Gems: 0"
+horizontal_alignment = 1
+
+[node name="AddCoinsButton" type="Button" parent="VBox" unique_id=103887061]
+layout_mode = 2
+text = "Add 100 Coins"
+
+[node name="RemoveCoinsButton" type="Button" parent="VBox" unique_id=820412006]
+layout_mode = 2
+text = "Remove 50 Coins"
+
+[node name="ShopItemLabel" type="Label" parent="VBox" unique_id=1512239193]
+layout_mode = 2
+text = "Iron Sword: 250 Coins"
+horizontal_alignment = 1
+
+[node name="PurchaseButton" type="Button" parent="VBox" unique_id=145741890]
+layout_mode = 2
+text = "Purchase Iron Sword"
+
+[node name="SaveButton" type="Button" parent="VBox" unique_id=1519334045]
+layout_mode = 2
+text = "Save Data"
+
+[node name="LoadButton" type="Button" parent="VBox" unique_id=1690602444]
+layout_mode = 2
+text = "Load Data"
+
+[node name="TransactionsLabel" type="Label" parent="VBox" unique_id=140631467]
+layout_mode = 2
+text = "Recent Transactions:"
+horizontal_alignment = 1
+
+[node name="TransactionsList" type="ItemList" parent="VBox" unique_id=1842593479]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
