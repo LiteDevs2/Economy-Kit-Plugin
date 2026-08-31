@@ -12,11 +12,7 @@ signal purchase_completed(item_id: String, currency_id: String, price: int)
 signal data_saved()
 signal data_loaded()
 
-const SAVE_DIR := "user://economykit"
-const MAIN_SAVE_FILE := "user://economykit/economy.json"
-const BACKUP_SAVE_FILE := "user://economykit/economy.backup.json"
 const SAVE_VERSION := 1
-const MAX_TRANSACTIONS := 100
 
 var currency: Node
 var shop: Node
@@ -45,29 +41,23 @@ func _ready() -> void:
 	transactions.transaction_created.connect(_on_transaction_created)
 	shop.purchase_completed.connect(_on_purchase_completed)
 	
-	load_data()
-	
 	print("EconomyKit initialized")
 
 
 func _on_balance_changed(currency_id: String, old_value: int, new_value: int) -> void:
 	balance_changed.emit(currency_id, old_value, new_value)
-	save()
 
 
 func _on_currency_created(currency_id: String) -> void:
 	currency_created.emit(currency_id)
-	save()
 
 
 func _on_transaction_created(transaction: Dictionary) -> void:
 	transaction_created.emit(transaction)
-	save()
 
 
 func _on_purchase_completed(item_id: String, currency_id: String, price: int) -> void:
 	purchase_completed.emit(item_id, currency_id, price)
-	save()
 
 
 func create_currency(id: String, display_name: String, symbol: String = "") -> bool:
@@ -95,7 +85,6 @@ func save() -> bool:
 func load_data() -> bool:
 	var data = save_manager.load_data()
 	if data.is_empty():
-		data_loaded.emit()
 		return false
 	
 	if data.has("currencies"):
@@ -116,5 +105,4 @@ func reset_all() -> void:
 	shop.reset()
 	transactions.reset()
 	save_manager.delete_save_files()
-	save()
 	print("EconomyKit: All data reset")
