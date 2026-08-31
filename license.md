@@ -1,6 +1,6 @@
 EconomyKit License
 
-Copyright (c) 2026 EconomyKit Contributors
+Copyright (c) 2026 LiteDevs
 
 Free Use License
 
